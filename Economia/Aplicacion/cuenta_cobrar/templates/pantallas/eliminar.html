@@ -1,0 +1,20 @@
+{% extends 'formulario.html' %}
+{% load static %}
+
+
+{% block controls %}
+    {% csrf_token %}
+    <h3 style = 'text-align: center'>¿Estás seguro de eliminar el registro de "{{ object }}"?</h3>
+{% endblock %}
+{% block boton %}
+<div class = "mx-auto">
+   <div class="col cent" >
+         <button type="submit" class="btn btn-success btn-lg me-md-5"  >
+             Guardar
+         </button>
+        <a href="{{ url_anterior }}" class="btn btn-danger btn-lg " >Cancelar</a>
+    </div>
+</div>
+{% endblock %}
+
+

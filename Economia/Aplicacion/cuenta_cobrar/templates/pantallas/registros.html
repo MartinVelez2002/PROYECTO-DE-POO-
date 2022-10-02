@@ -1,0 +1,55 @@
+{% extends 'formulario.html' %}
+{% load static %}
+
+
+    {% block controls %}
+        {% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Error al Grabar</strong> {{ form.errors }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        {% endif %}
+        <div class="container-fluid"></div>
+            <div class="row">
+                <div class="col-md-4" >
+                    <h5 style = "margin: 1%">{{ form.as_p }}</h5>
+                    <h5> <label for="id_interes" class="form-label" > Interés:  </label> </h5>
+                    <input type="number" id="id_interes" placeholder="Ingrese el valor del interés" class="form-control">
+                 </div>
+
+                <div  class="col-md-8 ml-auto">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <td>NRO</td>
+                                <td>CAPITAL</td>
+                                <td>INTERES</td>
+                                <td>IMPORTE A PAGAR</td>
+                                <td>Fecha</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tab">
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="ft">TOTAL</td>
+                                <td id="t1"></td>
+                                <td id="t2"></td>
+                                <td id="t3"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            {% block botones %}
+                <div class = "col cent">
+                    <button type="button"  class="btn btn-dark btn-xl me-md-5" id="btnCalcular" >
+                            Calcular
+                    </button>
+                </div>
+                {% endblock %}
+        </div>
+    {% endblock %}

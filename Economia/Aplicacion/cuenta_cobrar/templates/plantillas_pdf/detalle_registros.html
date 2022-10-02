@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tabla registros </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-lg tablaCabecera">
+        <h1 class="text-center"> <b>{{ titulo }}</b></h1>
+         <h4> RUC: 0942128505 </h4>
+         <h4> Dirección: Av. Tarqui y Brasil </h4>
+    </div>
+
+
+    <div class="container-fluid">
+        <table class="table table-hover table-bordered " >
+            <thead class="table-dark" >
+            <tr>
+               <th scope="col">#</th>
+               <th scope="col" >Nombre Cliente</th>
+               <th scope="col">Inicio del cobro</th>
+               <th scope="col"> Periodo de pago </th>
+               <th scope="col">Cuota mensual</th>
+               <th scope="col"> Último pago</th>
+               <th scope="col"> Monto Pagado </th>
+               <th scope="col">Saldo deudor</th>
+               <th scope="col">Saldo deudor(+interés)</th>
+               <th scope="col"> Estado de la deuda </th>
+             </tr>
+
+            </thead>
+            <tbody>
+                {% for object in cabecera %}
+                    <tr>
+                        <td>{{ object.id }}</td>
+                        <td>{{ object.nombre }}</td>
+                        <td>{{ object.fecha_cobro}}</td>
+                        <td>{{ object.meses_a_diferir }}</td>
+                        <td>{{ object.cuota_mensual }}</td>
+                        <td> {% for regis in pagos %}
+                                {% if object.id ==  regis.cabecera_id %}
+                                    {{ regis.fecha_ab }}
+                                {% endif %}
+                            {% endfor %}</td>
+                        <td>{% for regis in registro %}
+                                {% if object.id ==  regis.cabecera_id%}
+                                    {{ regis.abono }}
+                                {% endif %}
+                            {% endfor %}</td>
+                        <td>{{ object.deuda }}</td>
+                        <td>{{ object.saldo_interes }}</td>
+                        <td>{% if object.deuda != 0 %}
+                                    Activo
+                            {% elif object.deuda == 0 %}
+                                    Inactivo
+                            {% endif %}</td>
+                   </tr>
+                {% endfor %}
+           </tbody>
+
+        </table>
+    </div>
+
+</body>
+</html>

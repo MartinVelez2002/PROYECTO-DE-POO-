@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block regresar %}
+     <a class="btn btn btn-danger" href="{{url_anterior}}">
+            Regresar
+      </a>
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid ">
+       <div class="mx-auto row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-5 d-flex">
+
+          <div class="col ">
+            <div class="card card-section border rounded-5 p-4" style="height:12rem;width: 12rem">
+              <div class="card-header card-header-first rounded pb-3 text-center">
+                 <h5 class="card-header-title text-dark ">Registro de clientes</h5>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text font-wight">Sección para añadir nuevos clientes</p>
+                 <a class="text-decoration-none btn btn-warning " href="{% url 'cuenta_cobrar:detalle_cliente' %}">
+                    <h6 class="text-black">Accesar</h6>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+           <div class="col ">
+               <div class="card card-section border rounded-5 p-4" style="height:12rem;width: 12rem">
+                   <div class="card-header card-header-first rounded pb-3 text-center">
+                     <h5 class="card-header-title text-dark ">Cuentas por Cobrar</h5>
+                  </div>
+                  <div class="card-body text-center">
+                    <p class="card-text font-wight">Sección para realizar registros</p>
+                     <a class="text-decoration-none btn btn-warning " href="{% url 'cuenta_cobrar:cobro' %}">
+                        <h6 class="text-dark">Accesar</h6>
+                     </a>
+                  </div>
+               </div>
+          </div>
+      </div>
+</div>
+{% endblock %}

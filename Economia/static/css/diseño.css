@@ -1,0 +1,116 @@
+body{
+    font-family: "Droid Sans Mono Slashed";
+}
+
+th, td {
+    text-align: center;
+}
+.tablaCobros{
+    margin-top: 5%;
+    width: 900px;
+    background-color: #AEB6BF;
+    border-radius: 10px;
+}
+.tablapagos{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-label{
+    padding-left:1%;
+    padding-top:1%;
+}
+
+.titulos{
+    background-color: #81bcf5;
+    border-radius:15px;
+}
+
+
+.tablainteres{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    background-color: #ecf1f0;
+}
+.resul {
+    border-bottom: double;
+}
+
+
+
+.cent {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+.botonretorno{
+    margin-left: 80%;
+    margin-right: 15%;
+}
+
+
+
+.fondo2 {
+    background-color: #c2c0c0;
+    border-radius: 15px;
+    width: 600px;
+    padding: 1%;
+    margin-top: 1%;
+    margin-bottom: 0.5%;
+}
+.fondo3 {
+    background-color:#AED6F1 ;
+    border-radius: 15px;
+    margin-top:2%;
+    padding-bottom:5px;
+    padding-right:30px;
+    width: 800px;
+}
+
+.cent {
+    width: fit-content;
+    margin: 1% auto;
+}
+
+
+    .fondo2 {
+    background-color: #c2c0c0;
+    border-radius: 15px;
+    width: 600px;
+    padding: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+
+
+
+.form-control{
+    display:block;
+    width: 98%;
+    margin: 1%;
+}
+
+h1{
+    text-align: center;
+    color: black;
+}
+
+.bot{
+    width: fit-content;
+    margin: 2% auto;
+}
+
+.tabla2{
+    padding-bottom: 2%;
+}
+
+.crearcobro{
+    box-sizing: border-box;
+    width: 50%;
+}
